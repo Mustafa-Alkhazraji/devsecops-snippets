@@ -1,207 +1,80 @@
 # 🔐 DevSecOps Snippets – AWS Security Cheat Sheet (2025)
 
-A **production-ready DevSecOps cheat sheet** focused on **AWS security best practices**.
-This repository provides **reusable, well-documented snippets** that help engineers
-build, secure, monitor, and operate cloud infrastructure using a **security-by-default mindset**.
+<p align="center">
+  <img src="https://img.shields.io/badge/AWS-232F3E?style=for-the-badge&logo=amazon-aws&logoColor=white" />
+  <img src="https://img.shields.io/badge/DevSecOps-FF9900?style=for-the-badge&logo=paloaltonetworks&logoColor=white" />
+  <img src="https://img.shields.io/badge/Security-Verified-brightgreen?style=for-the-badge" />
+  <img src="https://img.shields.io/badge/License-MIT-blue?style=for-the-badge" />
+</p>
 
-> 🎯 Goal:  
-> Make DevSecOps **practical**, **readable**, and **ready for real-world production use**.
+---
+
+### 🎯 Overview
+This is a **production-ready DevSecOps toolbox** focused on AWS security. It provides reusable, well-documented snippets to help engineers build and operate cloud infrastructure with a **security-by-default mindset**.
+
+> **Goal:** Make DevSecOps practical, readable, and ready for real-world production use.
 
 ---
 
-## 🧭 What This Repository Is
+## 🗺️ Security Domains & Navigation
 
-- ✅ A **DevSecOps reference** for AWS
-- ✅ A **cheat sheet** with copy-paste-ready snippets
-- ✅ A **learning resource** for cloud & security engineers
-- ✅ A **baseline** you can extend for enterprise environments
-
-This is **not** a full framework or platform — it is a **collection of proven security patterns**.
+| Domain | Focus Area | Directory |
+| :--- | :--- | :--- |
+| ☁️ **EC2** | IMDSv2, Hardening, Monitoring | [`/ec2`](./ec2) |
+| ☸️ **EKS** | Kubernetes Security & Governance | [`/eks`](./eks) |
+| 🛡️ **Guardrails** | Compliance, Config & Drift Detection | [`/guardrails`](./guardrails) |
+| 👤 **IAM** | Least Privilege, OIDC & Zero Trust | [`/iam`](./iam) |
+| 🚨 **Response** | Incident Response Fundamentals | [`/incident-response`](./incident-response) |
+| 📜 **Logging** | CloudTrail & Audit Logging | [`/logging`](./logging) |
+| 🌐 **Network** | Secure VPC & Private Workloads | [`/networking`](./networking) |
+| 🗄️ **S3** | Encryption & Public Access Blocks | [`/s3`](./s3) |
+| 🔑 **Secrets** | Secrets Manager & Runtime Retrieval | [`/secrets`](./secrets) |
 
 ---
+
+
 
 ## 🧱 Repository Structure
-
 ```text
 devsecops-snippets/
-├── ec2/                   # EC2 security baselines & hardening
-├── eks/                   # EKS security notes and guidance
-├── guardrails/            # AWS governance & compliance controls
-├── iam/                   # Identity & Access Management (IAM)
-├── incident-response/     # Incident response fundamentals
-├── logging/               # Logging & audit (CloudTrail)
-├── networking/            # Secure networking (VPC)
-├── s3/                    # S3 storage security
-├── secrets/               # Secrets management (AWS Secrets Manager)
-└── README.md              # This document
-
-
-## 🔐 Security Domains Covered
-☁️ EC2 Security
-📂 ec2/
-
-Enforces IMDSv2
-
-Enables monitoring and visibility
-
-Provides a secure EC2 baseline
-
-Focuses on host-level hardening
-
-☸️ EKS (Kubernetes on AWS)
-📂 eks/
-
-High-level security guidance for EKS
-
-Covers shared responsibility model
-
-Prepares for future Kubernetes security extensions
-
-🛡️ Guardrails & Governance
-📂 guardrails/
-
-AWS Config baseline
-
-Continuous compliance monitoring
-
-Drift detection
-
-Foundation for SOC2 / ISO 27001
-
-👤 IAM & Identity Security
-📂 iam/
-
-Least Privilege IAM policy examples
-
-GitHub Actions → AWS OIDC authentication
-
-No static credentials
-
-Zero Trust CI/CD access
-
-🔑 Identity is the core of DevSecOps — this repo treats it as such.
-
-🚨 Incident Response
-📂 incident-response/
-
-Incident response fundamentals
-
-Documentation-first approach
-
-Designed to integrate with logging & monitoring
-
-📜 Logging & Audit
-📂 logging/
-
-CloudTrail baseline
-
-Multi-region audit logging
-
-Supports forensic investigations and compliance
-
-🌐 Networking Security
-📂 networking/
-
-Secure VPC baseline
-
-DNS enabled for service discovery
-
-Foundation for private workloads and Zero Trust networking
-
-🗄️ S3 Storage Security
-📂 s3/
-
-Public access blocking
-
-Encryption at rest
-
-Secure-by-default storage configuration
-
-🔑 Secrets Management
-📂 secrets/
-
-Runtime secrets retrieval
-
-AWS Secrets Manager usage
-
-No secrets in code
-
-No .env files committed
-
+├── ec2/                  # EC2 security baselines & hardening
+├── eks/                  # EKS security notes and guidance
+├── guardrails/           # AWS governance & compliance controls
+├── iam/                  # Identity & Access Management (IAM)
+├── incident-response/    # Incident response fundamentals
+├── logging/              # Logging & audit (CloudTrail)
+├── networking/           # Secure networking (VPC)
+├── s3/                   # S3 storage security
+├── secrets/              # Secrets management
+└── README.md             # This document
 🧠 Design Principles
-Security by Default
+Security by Default: Every snippet enforces maximum security out-of-the-box.
 
-Least Privilege
+Least Privilege: Policies are scoped to the minimum required permissions.
 
-Zero Trust
+Auditability: Every action is designed to leave a clear trail.
 
-Shift Left
+Human-Readable: Code is clean and well-commented for peer review.
 
-Auditability
+🚀 How to Use This Repository
+Browse: Select a security domain (e.g., iam/).
 
-Human-readable code
+Verify: Read the .md documentation within each folder to understand the "Why".
 
-Every snippet is designed to be:
+Deploy: Copy the snippet (CLI, Shell, or Terraform) and adapt it to your environment.
 
-Understandable
+Audit: Ensure you have CloudWatch/CloudTrail enabled to monitor changes.
 
-Explainable
+🤝 Contributing
+Contributions are what make the community amazing!
 
-Reviewable
+Security improvements take priority over new features.
 
-Extendable
+Keep snippets simple and explainable.
 
-🧪 How to Use This Repository
-Browse by security domain
-
-Read the .md file for context
-
-Copy the script or Terraform snippet
-
-Adapt it to your environment
-
-Extend it based on your threat model
-
-🚀 Who Is This For?
-DevOps Engineers
-
-Cloud Engineers
-
-Security Engineers
-
-Platform Engineers
-
-Anyone learning DevSecOps on AWS
+Ensure all Shell scripts are linted and Terraform is formatted.
 
 ⚠️ Disclaimer
-These snippets provide secure baselines, not complete solutions.
-Always adapt configurations to your:
+These snippets provide secure baselines, not complete solutions. Always adapt configurations to your specific Threat Model and Compliance Requirements (SOC2, PCI-DSS, etc.).
 
-Threat model
-
-Compliance requirements
-
-Business context
-
-🤝 Contributions
-Contributions are welcome.
-Security improvements > new features.
-
-If you add new snippets:
-
-Keep them simple
-
-Keep them secure
-
-Keep them well-documented
-
-⭐ Final Note
-If this repository helps you:
-
-⭐ Star it
-
-🍴 Fork it
-
-🔐 Secure your infrastructure
-
-Security is not optional.
+Created with ❤️ for the DevSecOps Community by Mustafa Alkhazraji
