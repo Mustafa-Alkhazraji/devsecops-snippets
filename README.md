@@ -34,7 +34,9 @@ devsecops-snippets/
 ├── s3/                    # S3 storage security
 ├── secrets/               # Secrets management (AWS Secrets Manager)
 └── README.md              # This document
-🔐 Security Domains Covered
+
+
+## 🔐 Security Domains Covered
 ☁️ EC2 Security
 📂 ec2/
 
